@@ -13,6 +13,9 @@ npm install @reduxjs/toolkit react-redux
 // adding axios ( https://github.com/axios/axios )
 npm install axios
 
+// adding miragejs mocking library
+npm install miragejs --save-dev
+
 // adding styled components with typescript
 npm install styled-components
 npm install --save-dev @types/styled-components

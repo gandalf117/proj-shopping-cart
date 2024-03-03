@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledTopMenu, StyledMenuLogo } from './styles';
-import { useAppSelector, useAppDispatch } from '../../hooks';
+import { useAppSelector, useAppDispatch } from 'hooks';
 import { toggleTheme } from '../../store/themeSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faShoppingCart  } from '@fortawesome/free-solid-svg-icons';

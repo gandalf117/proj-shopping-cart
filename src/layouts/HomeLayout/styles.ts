@@ -15,22 +15,3 @@ export const StyledHomeWrapper = styled.div`
 	flex-wrap: wrap;
 	flex: 1;
 `;
-
-export const StyledMainContent = styled.div`
-	width: 80%;
-	padding: 0 1rem;
-	display: flex;
-	flex-direction: column;
-`;
-
-export const StyledLink = styled.div`
-	margin-top: 0.5rem;
-	a,
-	a:visited {
-		color: white;
-		text-decoration: none;
-	}
-	a:hover {
-		font-weight: bold;
-	}
-`;

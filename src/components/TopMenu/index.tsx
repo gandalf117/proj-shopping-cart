@@ -11,6 +11,7 @@ const MENU_TITLE = 'SHOPPING CART PROJECT';
 
 const TopMenu: React.FC = () => {
 	const theme = useAppSelector((state) => state.theme.value);
+	const cartItemCount = useAppSelector((state) => state.cart.itemCount);
 	const dispatch = useAppDispatch();
 
 	const navigate = useNavigate();
@@ -20,7 +21,7 @@ const TopMenu: React.FC = () => {
 	};
 
 	const goToShoppingCart = () => {
-		navigate('/shopping-cart');
+		navigate('/shopping-cart/step1');
 	};
 
 	const toggleThemeF = (themeSwitch: boolean) => {
@@ -44,7 +45,7 @@ const TopMenu: React.FC = () => {
 			</div>
 		</div>
 		<div onClick={goToShoppingCart} className="menu-link">
-			<FontAwesomeIcon icon={faShoppingCart} /> (5)
+			<FontAwesomeIcon icon={faShoppingCart} /> ({cartItemCount})
 		</div>
 	</StyledTopMenu>;
 }

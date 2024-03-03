@@ -20,6 +20,7 @@ export const StyledTopMenu = styled.div<ThemeProps>`
 	color: ${({ theme }) => (theme.topMenuColor)};
 	border-radius: 20px;
 	line-height: 2rem;
+	z-index: 999;
 	.menu-title {
 		display: inline-block;
 		margin: 0 0.5rem;

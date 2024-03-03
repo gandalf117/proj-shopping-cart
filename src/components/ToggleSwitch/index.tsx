@@ -7,7 +7,7 @@ interface ToggleSwitchProps {
 
 const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ onChange }) => {
   const [isOn, setIsOn] = useState(false);
-const testtt = { isOn };
+
   const toggleSwitch = () => {
     const newState = !isOn;
     setIsOn(newState);

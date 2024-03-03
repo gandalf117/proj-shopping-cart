@@ -1,36 +1,45 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from 'hooks';
-import { Country } from 'types';
 import { fetchCocktails } from 'store/cocktailSlice';
-import { fetchCountries } from 'store/countrySlice';
-import { fetchCities } from 'store/citySlice';
 import { LoadingStates } from 'consts';
 import HomeLayout from 'layouts/HomeLayout';
+import CocktailListItem from 'components/CocktailListItem';
+import { addToCart } from 'store/cartSlice';
+import { getRandomInt } from 'utils';
 
 const HomePage: React.FC = () => {
-  // const [countries, setCountries] = useState<Country[]>([]);
-
   const dispatch = useAppDispatch();
-  //const { cocktails, status, error } = useAppSelector((state) => state.cocktail);
-  // const { countries, status, error } = useAppSelector((state) => state.country);
-  const { cities, status, error } = useAppSelector((state) => state.city);
-
+  const cartItems = useAppSelector((state) => state.cart.items);
+  const { cocktails, status, error } = useAppSelector((state) => state.cocktail);
+  
   useEffect(() => {
-    dispatch(fetchCocktails());
-    dispatch(fetchCountries());
-    dispatch(fetchCities());
+    dispatch(fetchCocktails());;
   }, [dispatch]);
+  
+  const preAddToCart = (count: number) => {
+    for (let i=0; i<count; i++) {
+      const rand = getRandomInt(0, cocktails.length - 1);
+      setTimeout(() => {dispatch(addToCart(cocktails[rand]))}, 100);
+    }
+  }
 
-  if (status === LoadingStates.Loading) return <div>Loading...</div>;
-  if (status === LoadingStates.Fail) return <div>Error: {error}</div>;
+  // preload some random items to the cart if the cart is empty
+  if (cocktails.length) {
+    if (!cartItems.length)
+    preAddToCart(5);
+  }
 
   return (
     <HomeLayout>
-      <ul>
-        {cities.map((item) => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
+      {status === LoadingStates.Loading && 
+        <div>Loading...</div>
+      }
+      {status === LoadingStates.Fail && 
+        <div>Error: {error}</div>
+      }
+      {status === LoadingStates.Success && cocktails.map((item) => (
+        <CocktailListItem key={item.id} {...item} />
+      ))}
     </HomeLayout>
   );
 }

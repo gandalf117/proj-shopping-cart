@@ -5,23 +5,23 @@ import Footer from 'components/Footer';
 
 import {
   StyledContainer,
-  StyledHomeWrapper,
+  StyledCartWrapper,
 } from './styles';
 
-interface HomeLayoutProps {
+interface CartLayoutProps {
   children: React.ReactNode;
 }
 
-const HomeLayout: React.FC<HomeLayoutProps> = ({ children }) => {
+const CartLayout: React.FC<CartLayoutProps> = ({ children }) => {
   return (
     <StyledContainer>
       <TopMenu />
-      <StyledHomeWrapper>
+      <StyledCartWrapper>
         {children}
-      </StyledHomeWrapper>
+      </StyledCartWrapper>
       <Footer />
     </StyledContainer>
   );
 };
 
-export default HomeLayout;
+export default CartLayout;

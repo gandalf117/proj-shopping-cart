@@ -1,12 +1,3 @@
-export interface AxiosResponse {
-  config: object;
-  data: any;
-  headers: object;
-  request: object;
-  status: number;
-  statusText: string;
-}
-
 export interface CocktailsResponse {
   cocktails: Cocktail[];
 }

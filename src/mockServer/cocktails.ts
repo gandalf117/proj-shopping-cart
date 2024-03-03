@@ -12,7 +12,7 @@ export const cocktails: Cocktail[] = [
     "1 oz Triple Sec or Cointreau",
     "¾ oz lime juice",
   ] },
-  { id: 3, name: "Mojito", image: "Mojito-Recipe-053.webp", price: 13, ingredients: [
+  { id: 3, name: "Mojito", image: "Mojito-Recipe-053.jpg", price: 13, ingredients: [
     "Fresh mint",
     "Lime juice",
     "White rum",
@@ -27,6 +27,39 @@ export const cocktails: Cocktail[] = [
     "White rum",
     "Lime juice",
     "Simple syrup",
+  ] },
+  { id: 6, name: "Moscow mule", image: "Moscow-Mule-062.webp", price: 8.50, ingredients: [
+    "2 oz vodka",
+    "4 oz ginger beer",
+    "½ oz lime juice",
+  ] },
+  { id: 7, name: "Tom Collins", image: "Tom-Collins-001.webp", price: 10, ingredients: [
+    "Gin",
+    "Lemon juice",
+    "Simple syrup",
+    "Soda water",
+  ] },
+  { id: 8, name: "Old Fashioned", image: "Old-Fashioned-058.jpg", price: 10, ingredients: [
+    "Bourbon or rye whiskey",
+    "Sugar cube",
+    "Water",
+    "Angostura bitters",
+    "Orange peel",
+  ] },
+  { id: 9, name: "Gin Fizz", image: "Gin-Fizz-112.webp", price: 15, ingredients: [
+    "2 oz gin",
+    "¾ oz lemon juice",
+    "½ oz simple syrup",
+    "1 egg white",
+    "Soda water",
+  ] },
+  { id: 10, name: "Cosmopolitan", image: "Cosmopolitan-Cocktail-006.webp", price: 17, ingredients: [
+    "1 ounce* vodka or citron vodka",
+    "1 ounce 100% cranberry juice (not sweetened!)",
+    "½ ounce Cointreau",
+    "½ ounce fresh lime juice",
+    "1 teaspoon simple syrup",
+    "For the garnish: lime wheel (optional)",
   ] },
   // { id: 2, name: "ddddddd", image: "ddddddddd.webp", price: 15, ingredients: [
   //   "sdfsdfsfsdfsd",

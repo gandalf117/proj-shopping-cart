@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from 'assets/themes/breakpoints';
 
 export const StyledContainer = styled.div`
 	display: flex;
@@ -14,4 +15,18 @@ export const StyledCartWrapper = styled.div`
 	flex-direction: column;
 	flex-wrap: wrap;
 	flex: 1;
+	padding: 1rem;
+	width: 50%;
+	margin: 0 auto 2rem auto;
+	background: whitesmoke;
+	border: 1px solid gainsboro;
+	border-radius: 10px;
+
+	@media ${devices.medium} {
+		width: 70%;
+	}
+
+	@media ${devices.small} {
+		width: 90%;
+	}
 `;

@@ -23,6 +23,10 @@ npm install --save-dev @types/styled-components
 // adding font awesome icons
 npm install @fortawesome/fontawesome-svg-core @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/free-regular-svg-icons
 
+// adding uuid with typescript for unique identification of stuff
+npm install uuid
+npm i --save-dev @types/uuid
+
 ********************** Seting up esLint and prettier to autoformat code **********************
 npm install eslint --save-dev
 npm install eslint-plugin-react eslint-plugin-react-hooks --save-dev

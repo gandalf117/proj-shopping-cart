@@ -7,8 +7,9 @@ const lightTheme: Theme = {
     topMenuColor: 'black',
     buttonBackground: 'lightgray',
     buttonBorderColor: 'darkgray',
+    buttonColor: 'black',
     buttonBackgroundHover: 'lightgray',
-    footerBackground: 'white',
+    footerBackground: 'whitesmoke',
     footerColor: 'black',
 }
 

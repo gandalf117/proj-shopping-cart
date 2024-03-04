@@ -5,6 +5,7 @@ export interface Theme {
     topMenuColor: string;
     buttonBackground: string;
     buttonBorderColor: string;
+    buttonColor: string;
     buttonBackgroundHover: string;
     footerBackground: string;
     footerColor: string;

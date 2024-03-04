@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Theme } from '../../assets/themes/theme.interface';
+import { devices } from 'assets/themes/breakpoints';
 
 interface ThemeProps {
 	theme: Theme;
@@ -8,6 +9,7 @@ interface ThemeProps {
 export const StyledTopMenu = styled.div<ThemeProps>`
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	align-items: center;
 	position: absolute;
 	top: 0;
@@ -34,6 +36,12 @@ export const StyledTopMenu = styled.div<ThemeProps>`
 	}
 	.menu-link {
 		cursor: pointer;
+	}
+
+	@media ${devices.small} {
+		.menu-title {
+			display: none;
+		}
 	}
 `;
 

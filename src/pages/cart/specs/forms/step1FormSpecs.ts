@@ -6,11 +6,20 @@ import {
 	EMAIL,
 } from 'components/Form/constants';
 
+export interface FarmData {
+	fname: string;
+	lname: string;
+	country: number;
+    city: number;
+    email: string;
+    street: string;
+}
+
 export default [
 	{
 		uuid: uuidv4(),
 		type: INPUT,
-		ckey: 'name',
+		ckey: 'fname',
 		label: 'First name:',
 		options: [LABEL_SAME_ROW],
 		validation: {
@@ -23,9 +32,7 @@ export default [
 		ckey: 'lname',
 		label: 'Last name:',
 		options: [LABEL_SAME_ROW],
-		validation: {
-			required: true,
-		},
+		validation: {},
 	},
 	{
 		uuid: uuidv4(),
@@ -59,6 +66,16 @@ export default [
 		optionValues: [],
 		validation: {
 			required: true
+		},
+	},
+	{
+		uuid: uuidv4(),
+		type: INPUT,
+		ckey: 'street',
+		label: 'Street:',
+		options: [LABEL_SAME_ROW],
+		validation: {
+			required: true,
 		},
 	},
 ];

@@ -22,7 +22,7 @@ const DropdownComponent = forwardRef(
 		ref,
 	) => {
 		const isSameRow = options.includes(LABEL_SAME_ROW);
-		const [currValue, setCurrValue] = useState(value || optionValues[0].value);
+		const [currValue, setCurrValue] = useState(value);
 		const [isValid, setIsValid] = useState(true);
 		const [validationText, setValidationText] = useState('');
 

@@ -21,10 +21,8 @@ export const validationHandler = (
 	}
 
 	if (validation.format && isValid) {
-		
 		var re = new RegExp(validation.format);
 		isValid = re.test(currValue);
-		console.log('validation.format:::', currValue, validation.format, re.test(currValue))
 		if (!isValid) {
 			message = validation.msg_invalid || 'This email is ivalid!';
 		}

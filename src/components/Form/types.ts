@@ -1,3 +1,5 @@
+import { FarmData } from "pages/cart/specs/forms/step1FormSpecs";
+
 export enum FormOptionType {
     REGULAR = "TYPE_REGULAR",
     NO_VALIDATION = "TYPE_NO_VALIDATION",
@@ -13,5 +15,5 @@ export interface FormOption {
     type?: FormOptionType;
     position: FormOptionPosition;
     label: string;
-    clickHandler: () => void;
+    clickHandler: (formData: FarmData) => void;
 }

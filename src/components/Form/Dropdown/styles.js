@@ -43,4 +43,15 @@ export const StyledSelect = styled.div`
 		font-size: 1rem;
 		color: black;
 	}
+	.autocomplete {
+		input {
+			width: 100%;
+			display: inline-block;
+			border: 1px solid gray;
+			padding: 0.2rem 0.5rem;
+			line-height: 1.8rem;
+			font-size: 1rem;
+			color: black;
+		}
+	}
 `;

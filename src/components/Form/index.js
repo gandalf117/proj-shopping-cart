@@ -9,7 +9,7 @@ import { StyledForm, StyledButtonContainer } from './styles';
 import { FormOptionPosition, FormOptionType } from 'components/Form/types';
 import { useAppSelector } from 'hooks';
 
-function FormComponent({ formOpts, formSpecs, formData = {} }) {
+function FormComponent({ formOpts = {}, formSpecs, formData = {} }) {
 	const theme = useAppSelector((state) => state.theme.value);
 	// stores all the fields as an array of refs so that they can be validated on the go
 	// each field type can contain its own validaiton, which can be invoked from the child component
@@ -22,6 +22,9 @@ function FormComponent({ formOpts, formSpecs, formData = {} }) {
 		modifiedFormData.current[key] = val;
 		if (changeCallback) {
 			changeCallback(val);
+		}
+		if (formOpts.onChange) {
+			formOpts.onChange(modifiedFormData.current);
 		}
 	};
 
@@ -83,8 +86,8 @@ function FormComponent({ formOpts, formSpecs, formData = {} }) {
 		});
 	};
 
-	const getFormActions = (opts) => {
-		return opts.actions.map((action, index) => {
+	const getFormActions = (actions) => {
+		return actions.map((action, index) => {
 			const type = action.type;
 			let label = '';
 			let className = '';
@@ -134,9 +137,9 @@ function FormComponent({ formOpts, formSpecs, formData = {} }) {
 	return (
 		<StyledForm>
 			{getFormBody(formSpecs, formData)}
-			{formOpts && 
+			{formOpts.actions && 
 				<StyledButtonContainer>
-					{getFormActions(formOpts)}
+					{getFormActions(formOpts.actions)}
 				</StyledButtonContainer>
 			}
 		</StyledForm>

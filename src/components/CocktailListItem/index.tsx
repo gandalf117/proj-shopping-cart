@@ -4,7 +4,7 @@ import { StyledCocktailListItem } from './styles';
 import Button from 'components/Button';
 import { faCartPlus  } from '@fortawesome/free-solid-svg-icons';
 import { useAppDispatch } from 'hooks';
-import { addToCart } from '../../store/cartSlice';
+import { addToCart } from 'store/cartSlice';
 
 const IMG_PATH = 'assets/images/cocktails';
 

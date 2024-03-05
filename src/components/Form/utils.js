@@ -20,11 +20,11 @@ export const validationHandler = (
 		}
 	}
 
-	if (validation.format && isValid) {
+	if (validation.format && isValid && currValue) {
 		var re = new RegExp(validation.format);
 		isValid = re.test(currValue);
 		if (!isValid) {
-			message = validation.msg_invalid || 'This email is ivalid!';
+			message = validation.msg_invalid || 'This field is ivalid!';
 		}
 	}
 
@@ -32,3 +32,14 @@ export const validationHandler = (
 	setValidationText(message);
 	return isValid;
 };
+
+let timeout;
+
+export const debounce = (func, wait) => {
+	const delayedFunc = (...args) => {
+		clearTimeout(timeout);
+		func(...args);
+	};
+	clearTimeout(timeout);
+	timeout = setTimeout(delayedFunc, wait);
+}

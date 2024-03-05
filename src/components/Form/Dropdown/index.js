@@ -53,7 +53,8 @@ const DropdownComponent = forwardRef(
 				<StyledSelect className="custom-input">
 					<select name={ckey} id={ckey} disabled={disabled} style={styles} onChange={onChangeHandler}>
 						{optionValues.map((item, index) => {
-							return <option key={index} value={item.value}>{item.name}</option>
+							const isSelected = currValue && currValue === item.value;
+							return <option selected={isSelected} key={index} value={item.value}>{item.name}</option>
 						})}
 					</select>
 					{!isValid && (

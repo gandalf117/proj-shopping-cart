@@ -30,6 +30,16 @@ export interface City {
   ctry_code: string;
 }
 
+export interface UserData {
+  fname: string;
+  lname: string;
+  email: string;
+  country: number | null;
+  city: number | null;
+  street: string;
+  promoCode: string;
+}
+
 export type statusTypes = 'idle' | 'loading' | 'success' | 'fail';
 
 export interface CocktailsState {

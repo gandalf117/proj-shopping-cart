@@ -6,8 +6,9 @@ import {
 	EMAIL,
 	READONLY,
 	LABEL_SAME_ROW,
+	WAIT_FOR_TYPING_TO_FINISH
 } from 'components/Form/constants';
-import { validationHandler } from 'components/Form/utils';
+import { validationHandler, debounce } from 'components/Form/utils';
 
 const InputComponent = forwardRef(
 	(
@@ -27,8 +28,9 @@ const InputComponent = forwardRef(
 		ref,
 	) => {
 		const isSameRow = options.includes(LABEL_SAME_ROW);
+		const hasDebounce = options.includes(WAIT_FOR_TYPING_TO_FINISH);
 
-		const [currValue, setCurrValue] = useState(value);
+		const [currValue, setCurrValue] = useState(value || '');
 		const [isValid, setIsValid] = useState(true);
 		const [validationText, setValidationText] = useState('');
 
@@ -36,7 +38,12 @@ const InputComponent = forwardRef(
 			const val = e.target.value;
 			setCurrValue(val);
 			// send the change to the parent component to update the payload
-			onChange(ckey, val);
+			if (hasDebounce) {
+				debounce(() => onChange(ckey, val), 1000);
+			} else {
+				onChange(ckey, val);
+			}
+			
 		};
 
 		// TODO: maybe should use a hook

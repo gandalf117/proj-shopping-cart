@@ -17,3 +17,8 @@ export const DROPDOWN_MULTISELECT = 'multiselect_dropdown'; // to be implemented
 // ******************* Style constants *******************
 
 export const LABEL_SAME_ROW = 'label-same-row';
+
+// ******************* Functionality constants *******************
+
+export const WAIT_FOR_TYPING_TO_FINISH = 'has-debounce';
+export const HAS_AUTOCOMPLETE = 'has-autocomplete';

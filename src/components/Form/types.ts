@@ -1,4 +1,4 @@
-import { FarmData } from "pages/cart/specs/forms/step1FormSpecs";
+import { UserData } from "types";
 
 export enum FormOptionType {
     REGULAR = "TYPE_REGULAR",
@@ -15,5 +15,5 @@ export interface FormOption {
     type?: FormOptionType;
     position: FormOptionPosition;
     label: string;
-    clickHandler: (formData: FarmData) => void;
+    clickHandler: (formData: UserData) => void;
 }

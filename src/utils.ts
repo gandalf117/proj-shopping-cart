@@ -14,3 +14,7 @@ export function getRandomInt(min: number, max: number): number {
 export const isObjEmpty = (obj: Record<string, any>): boolean => {
     return Object.keys(obj).length === 0 && obj.constructor === Object;
 };
+
+export function roundUpAndFormat(num: number): string {
+    return (Math.ceil(num * 100) / 100).toFixed(2);
+}

@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, current } from '@reduxjs/toolkit';
 import { Cocktail, UserData } from 'types'
 
 interface CartState {
@@ -30,8 +30,18 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<Cocktail>) => {
-      state.items.push(action.payload);
-      state.itemCount = state.items.length;
+      const newItem = action.payload;
+      const itemIndex = state.items.findIndex(i => i.id === newItem.id);
+
+      if (itemIndex === -1) {
+        state.items.push(newItem);
+      } else {
+        state.items[itemIndex].count++;
+      }
+      
+      state.itemCount = state.items.reduce((result, item) => {
+        return result += item.count;
+      }, 0);
     },
     setUserData: (state, action: PayloadAction<UserData>) => {
       state.userData = action.payload;

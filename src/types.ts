@@ -8,6 +8,7 @@ export interface Cocktail {
   image: string;
   price: number;
   ingredients: string[];
+  count: number;
 }
 
 export interface CountryResponse {

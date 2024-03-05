@@ -40,7 +40,6 @@ export const countrySlice = createSlice({
       })
       .addCase(fetchCountries.fulfilled, (state, action: PayloadAction<Country[]>) => {
         state.status = LoadingStates.Success;
-        console.log('countries action.payload:::', action.payload)
         state.countries = action.payload;
       })
       .addCase(fetchCountries.rejected, (state, action: PayloadAction<any>) => {

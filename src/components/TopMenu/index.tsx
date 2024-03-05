@@ -25,7 +25,6 @@ const TopMenu: React.FC = () => {
 	};
 
 	const toggleThemeF = (themeSwitch: boolean) => {
-		console.log('Theme switch is:', themeSwitch);
 		dispatch(toggleTheme());
 	  };
 

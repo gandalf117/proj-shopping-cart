@@ -40,7 +40,6 @@ export const cocktailSlice = createSlice({
       })
       .addCase(fetchCocktails.fulfilled, (state, action: PayloadAction<Cocktail[]>) => {
         state.status = LoadingStates.Success;
-        console.log('cocktails action.payload:::', action.payload)
         state.cocktails = action.payload;
       })
       .addCase(fetchCocktails.rejected, (state, action: PayloadAction<any>) => {

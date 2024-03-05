@@ -16,7 +16,7 @@ export const StyledCartWrapper = styled.div`
 	flex-wrap: wrap;
 	flex: 1;
 	padding: 1rem;
-	width: 50%;
+	width: 70%;
 	margin: 0 auto 2rem auto;
 	background: whitesmoke;
 	border: 1px solid gainsboro;

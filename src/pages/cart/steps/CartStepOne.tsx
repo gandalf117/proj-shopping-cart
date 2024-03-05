@@ -20,7 +20,6 @@ const CartStepOne: React.FC = () => {
   const [selectedCountry, setSelectedCountry] = useState(initialCountry);
 
   const goToNextStep = (formData: UserData) => {
-    console.log('formData:::', formData)
     dispatch(setUserData(formData));
     navigate('/shopping-cart/step2');
   };

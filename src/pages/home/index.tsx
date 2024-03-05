@@ -24,10 +24,10 @@ const HomePage: React.FC = () => {
   }
 
   // preload some random items to the cart if the cart is empty
-  if (cocktails.length) {
-    if (!cartItems.length)
-    preAddToCart(5);
-  }
+  // if (cocktails.length) {
+  //   if (!cartItems.length)
+  //   preAddToCart(5);
+  // }
 
   return (
     <HomeLayout>
